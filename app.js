@@ -27,39 +27,24 @@ app.use(express.static('public'))
 
 //Routes List
 app.get('/', (req, res) => {
-    // cont = [
-    //     {
-    //         name: 'Adityo',
-    //         email: '1st@gmail.com',
-    //     },
-    //     {
-    //         name: 'Fathur',
-    //         email: '2nd@gmail.com',
-    //     },
-    //     {
-    //         name: 'Rahim',
-    //         email: '3rd@gmail.com',
-    //     },
-    // ]
-    const cont = contacts.loadContact();
     res.render('index', 
     {
         nama: "Muhammad Adityo Fathur Rahim",
         title: 'Webserver EJS',
-        cont,
     });
 })
 
 app.get('/about', (req, res, next) => {
     res.render('about', {nama: "Muhammad Adityo Fathur Rahim",
-    //layout: '', perintah ini sama seperti perintah app.set('layout', 'nama_folder/layout');
     title: 'Webserver EJS'})
     // next()
 })
 
 app.get('/contact', (req, res) => {
+    const cont = contacts.loadContact(); //Mendefinisikan variabel untuk menampung array dari contact.json
     res.render('contact', {nama: "Muhammad Adityo Fathur Rahim",
-    title: 'Webserver EJS'})
+    title: 'Webserver EJS',
+    cont})
 })
 
 //Url dengan mengambil parameter id dan query category

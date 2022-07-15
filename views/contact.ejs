@@ -1,6 +1,24 @@
 <div class="container">
     <div class="p-5" style="margin-top: 50px;">
-        <h1>Hello to Contact</h1>
-        <p>this is contact page</p>
+        <h1>Hello, <%= nama %></h1>
+        <p>This is contact page</p>
+        <hr>
+        <h3>Contact List</h3>
+        <ol>
+        <% if (cont.length < 1) { %>
+            <p>Contact is empty!</p>
+        <% } else { %> 
+            <% cont.forEach((contact) => { %>
+                <li>
+                    <ul>
+                        <li><b>Name:</b> <%= contact.name %></li>
+                        <li><b>Mobile:</b> <%= contact.mobile %></li>
+                        <li><b>E-mail:</b> <a href=""><%= contact.email %></a></li>
+                    </ul>
+                </li>
+                <br>
+            <% });  %>
+        <% } %> 
+        </ol>
     </div>
 </div>

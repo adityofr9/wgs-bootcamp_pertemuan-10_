@@ -3,22 +3,5 @@
         <h1>Hello, <%= nama %></h1>
         <br>
         <hr>
-        <h3>Contact List</h3>
-        <ol>
-        <% if (cont.length < 1) { %>
-            <p>Contact is empty!</p>
-        <% } else { %> 
-            <% cont.forEach((contact) => { %>
-                <li>
-                    <ul>
-                        <li>Name: <%= contact.name %></li>
-                        <li>Mobile: <%= contact.mobile %></li>
-                        <li>E-mail: <%= contact.email %></li>
-                    </ul>
-                </li>
-                <br>
-            <% });  %>
-        <% } %> 
-        </ol>
     </div>
 </div>
